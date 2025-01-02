@@ -33,6 +33,11 @@ jobs:
           cmake -B build -G "Visual Studio 17 2022" -A x64 -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           cmake --build build --config ${{ matrix.build_type }}
 
+      - name: run regression test
+        run: |
+          cd resources
+          ..\build\${{ matrix.build_type }}\c3c.exe compile-run -vvv -g0 reg.c3
+
       - name: Compile and run some examples
         run: |
           cd resources
@@ -86,11 +91,6 @@ jobs:
           ..\build\${{ matrix.build_type }}\c3c.exe compile --lib raylib5 --print-linking examples\raylib\raylib_arkanoid.c3
           ..\build\${{ matrix.build_type }}\c3c.exe compile --lib raylib5 --print-linking examples\raylib\raylib_snake.c3
           ..\build\${{ matrix.build_type }}\c3c.exe compile --lib raylib5 --print-linking examples\raylib\raylib_tetris.c3
-
-      - name: run regression test
-        run: |
-          cd resources
-          ..\build\${{ matrix.build_type }}\c3c.exe compile-run -vvv -g0 reg.c3
 
       - name: run compiler tests
         run: |
