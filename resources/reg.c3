@@ -14,15 +14,7 @@ macro @test3(#foo = testme()) => #foo;
 
 fn void main()
 {
-	test();
-	@test2();
-	@test3();
-	io::printn(x);
-	test2::test();
-	test2::@test2();
-	test2::@test3();
-	io::printn(test2::x);
-
+	test2::@test3(test2::testme());
 }
 
 module test2;
