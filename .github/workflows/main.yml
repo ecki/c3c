@@ -90,7 +90,7 @@ jobs:
       - name: run regression test
         run: |
           cd resources
-          ..\build\${{ matrix.build_type }}\c3c.exe compile-run -g0 reg.c3
+          ..\build\${{ matrix.build_type }}\c3c.exe compile-run -vvv -g0 reg.c3
 
       - name: run compiler tests
         run: |
