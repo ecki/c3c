@@ -14,7 +14,7 @@ macro @test3(#foo = testme()) => #foo;
 
 fn void main()
 {
-	test2::@test3(test2::testme());
+	test2::@test3();
 }
 
 module test2;
