@@ -18,8 +18,8 @@ fn void main()
 	@test2();
 	@test3();
 	io::printn(x);
-	//test2::test();
-	//test2::@test2();
+	test2::test();
+	test2::@test2();
 	//test2::@test3();
 	io::printn(test2::x);
 
